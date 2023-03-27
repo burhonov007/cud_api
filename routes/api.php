@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PostController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
@@ -26,8 +27,11 @@ Route::group(['middleware' => 'api','prefix' => 'auth'], function ($router) {
     Route::get('/posts/{post}', 'PostController@show');
 
         Route::group(['middleware'=>'admin'],function () {
-            Route::get('/posts/{post}/edit', 'PostController@edit');
-            Route::delete('/posts/{post}', 'PostController@destroy');
+
+            Route::resource('posts', PostController::class);
+//
+//            Route::put('/posts/{post}', 'PostController@update');
+//            Route::delete('/posts/{post}', 'PostController@destroy');
         });
 });
 
