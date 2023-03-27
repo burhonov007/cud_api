@@ -76,28 +76,6 @@ class PostController extends Controller
      * @param int $id
      * @return \Illuminate\Http\JsonResponse
      */
-//    public function update(Request $request, Post $post)
-//    {
-//        $input = $request->all();
-//        $validator = Validator::make($input, [
-//            'title' => 'required|string',
-//            'description' => 'required|string',
-//            'image' => 'required|string'
-//        ]);
-//        if ($validator->fails()) {
-//            return $this->sendError('Validation Error.', $validator->errors());
-//        }
-//        $post->title = $input['title'];
-//        $post->description = $input['description'];
-//        $post->image = $input['image'];
-//        $post->save();
-//        return response()->json([
-//            "success" => true,
-//            "message" => "Post updated successfully.",
-//            "data" => $post
-//        ]);
-//    }
-
     public function update(Request $request, Post $post)
     {
         $input = $request->all();
